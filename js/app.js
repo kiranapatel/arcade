@@ -74,10 +74,6 @@ Game.prototype.gameReset = function() {
    */
   player = new Player(303, 404);
   
-  //Place the PowerUp object in a variable called powerup
-  powerup = new PowerUp(-100, -100);
-  powerup.reset();
-
   // Turn on game indicator. This will start game rendering.
   this.gameOn = true;
 };
