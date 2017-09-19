@@ -151,7 +151,6 @@ var Player = function(x,y) {
   this.x = x;
   this.y = y;
   this.carryGem = false;
-  this.carryPowerUp = false;
   this.playerLives = 3;
   this.blueGemScore = 0;
   this.orangeGemScore = 0;
@@ -304,72 +303,6 @@ Gem.prototype.hide = function() {
 // Draw the Gem on the game board
 Gem.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
-
-/* PowerUp class, to represent powerup to collect.
- * @param {number} x    X coordinate of PowerUp location.
- * @param {number} y    Y coordinate of PowerUp location.
- */
-
-var PowerUp = function (x, y) {
-  this.x = x;
-  this.y = y;
-  this.sprite = 'images/Star.png';
-  this.activated = false;   //powerup activate state
-  this.deactivated = true;  //powerup deactivate state
-  this.timer = 30;          // powerup length; timer for powerup to deactivate
-};
-
-// Steps to be carried out when an PowerUp is picked up by the player
-PowerUp.prototype.pickup = function() {
-  // Set parameters for objects
-  player.carryPowerUp = true;
-  this.activated = true;
-  this.deactivated = false;
-  
-  // Change player sprite name to show PowerUp carried 
-  player.sprite = 'images/char-boy-w-star.png';
-
-  powerup.hide();
-};
-
-//hide powerup when needed
-PowerUp.prototype.hide = function () {
-  // Hide PowerUp off screen (to be reused on reset)
-  this.x = -101;
-  this.y = -101;
-}
-
-// Reset will set PowerUp on game board to be picked up.
-PowerUp.prototype.reset = function() {
-  this.x = Math.floor(Math.random() * 5) * 101;
-  this.y = Math.ceil(Math.random() * 4) * 83 - 11;
-  this.activated = false;
-  this.deactivated = true;
-  this.sprite = 'images/Star.png';
-};
-
-// Draw the PowerUp on the game board
-PowerUp.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
-// powerup activate method
-PowerUp.prototype.activate = function() {
-    this.deactivated = false;
-    timeout();
-    allEnemies.forEach(function(enemy) {
-      enemy.rate = 50;
-    });
-};
-
-// Gem deactivate method
-PowerUp.prototype.deactivate = function() {
-    // deactivate the gem
-    allEnemies.forEach(function(enemy) {
-      enemy.rate = 100 + Math.floor(Math.random() * 150);
-    });
 };
 
 //Initialize game (implicity global)
