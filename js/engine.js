@@ -82,9 +82,7 @@ var Engine = (function(global) {
       if(player.y - enemy.y == 10) {
         if(player.x < enemy.x + 75 && player.x + 75 > enemy.x){
           player.playerLives--;
-          if(powerup.activated !== false) {
-            powerup.deactivate();
-          }
+         
           // If the player is carrying an Gem, drop it.
           if (player.carryGem) {
             if(gem.sprite === "images/Heart.png"){
@@ -101,18 +99,6 @@ var Engine = (function(global) {
     //Check for collision between player and the gem, and take gem.
     if(player.y === gem.y && player.x === gem.x) {
       gem.pickup();
-    }
-
-    if(player.y === powerup.y && player.x === powerup.x) {
-      powerup.pickup();
-    }
-
-    //Check for powerup activate fuction.
-    if(powerup.activated !== false && powerup.timer > 0){
-      powerup.activate();
-      ctx.lineWidth = 5;
-      ctx.strokeText('PowerUp Timer: ' + powerup.timer,102,575);
-      ctx.fillText('PowerUp Timer: ' + powerup.timer,102, 575);
     }
   }
 
@@ -136,12 +122,7 @@ var Engine = (function(global) {
                   player.playerLives++;
                   gem.greenGemCount = 0;
               }
-
-              //reset score for powerup to be appear again
-              if(player.resetScroe === 150) {
-                player.resetScroe = 0;
-              }
-              
+          
               //update player score only when collect gem
               if(gem.sprite === "images/Heart.png"){
                 player.totalScore += 0;
@@ -300,8 +281,6 @@ var Engine = (function(global) {
     if(gem.visible) {
       gem.render();
     }
-
-    powerup.render();
 
     /* Loop through all of the objects within the allEnemies array and call
      * the render function you have defined.
