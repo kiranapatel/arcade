@@ -16,5 +16,5 @@ Project #3 of Udacity's [Front-End Web Developer Nanodegree](https://www.udacity
 
 ### Screenshot of this game.
 ![alt text][screenshot]
-[screenshot]:images/Game_Screenshot.png "screen shot"
+[screenshot]:https://github.com/kiranapatel/arcade/blob/master/images/Game_Screenshot.png "screen shot"
 
