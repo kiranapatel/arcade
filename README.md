@@ -16,6 +16,6 @@ Project #3 of Udacity's [Front-End Web Developer Nanodegree](https://www.udacity
 ### Screenshot of this game.
 ![game_screenshot](https://user-images.githubusercontent.com/30094575/30642094-0bfeec94-9dcf-11e7-946d-152f7c61ad65.png)
 
-## MIT License 
+## MIT License (arcade/LICENSE.txt)
 
 
