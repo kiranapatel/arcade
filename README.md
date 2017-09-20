@@ -15,8 +15,7 @@ Project #3 of Udacity's [Front-End Web Developer Nanodegree](https://www.udacity
 * Game over when no life left for player.
 
 ### Screenshot of this game.
-![alt text][screenshot]
-[screenshot]:https://github.com/kiranapatel/arcade/blob/master/images/Game_Screenshot.png "screen shot"
+![game_screenshot](https://user-images.githubusercontent.com/30094575/30642094-0bfeec94-9dcf-11e7-946d-152f7c61ad65.png)
 
 ## License
 
