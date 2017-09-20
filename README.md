@@ -15,5 +15,6 @@ Project #3 of Udacity's [Front-End Web Developer Nanodegree](https://www.udacity
 * Game over when no life left for player.
 
 ### Screenshot of this game.
-[screenshot]:images/Game_Screenshot.png
+![alt text][screenshot]
+[screenshot]:images/Game_Screenshot.png "screen shot"
 
